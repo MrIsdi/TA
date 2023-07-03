@@ -3,7 +3,7 @@ import logo from "../assets/logo.png"
 
 function MobileView({style}){
     return (
-        <div className={`gap-x-32 flex-col lg:flex-row md:mx-4 ${style}`}>
+        <div className={`gap-x-32 flex-col lg:flex-row fixed transition ease-in-out duration-300 w-full top-[62px] px-4 z-50 ${style}`}>
             <div className='flex gap-x-8 flex-col lg:flex-row'>
                 <a href="" className='text-center text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] py-2 '>Home</a>
                 <a href="" className='text-center text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] py-2 '>About</a>
@@ -27,7 +27,7 @@ function Navbar() {
     }
     const handleScroll = () => {
         if(document.body.scrollTop > 46 || document.documentElement.scrollTop > 46){
-            setScroll("bg-white/10 backdrop-blur-[10px] border-b border-white/10 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]")
+            setScroll("bg-white/15 backdrop-blur-[10px] border-b border-white/10 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]")
         }else{
             setScroll("")
         }
@@ -40,7 +40,7 @@ function Navbar() {
     },[scroll])
     return (
         <React.Fragment>
-            <nav className={`flex lg:justify-evenly justify-between pt-4 mx-4 lg:mx-0 fixed w-full top-0 z-50 ${scroll}`}>
+            <nav className={`flex lg:justify-evenly justify-between pt-4 px-4 lg:px-0 fixed w-full top-0 z-50 ${scroll}`}>
                 <div className='flex items-center'>
                     <img src={logo} alt="" />
                     <p className='text-2xl text-tomato font-bold'>CV<span className='text-base text-white'>Tomato.</span></p>
@@ -64,7 +64,7 @@ function Navbar() {
                     </svg>
                 </button>
             </nav>
-            { burger? <MobileView style="flex" /> : <MobileView style="hidden" /> }
+            { burger? <MobileView style={`flex ${scroll}`} /> : <MobileView style="hidden" /> }
             
         </React.Fragment>
     )

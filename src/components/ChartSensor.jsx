@@ -94,9 +94,9 @@ function ChartSensor({page}) {
     return (
         <React.Fragment>
             <div className='w-full lg:w-1/2 mt-8 flex overflow-auto gap-x-8'>
-                <Line options={options} data={dataSuhu} className="w-full bg-white/10 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
-                <Line options={options} data={dataLembap} className="w-full border bg-white/10 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
-                <Line options={options} data={dataCahaya} className="w-full border bg-white/10 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
+                <Line options={options} data={dataSuhu} className="w-full bg-white/15 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
+                <Line options={options} data={dataLembap} className="w-full border bg-white/15 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
+                <Line options={options} data={dataCahaya} className="w-full border bg-white/15 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
             </div>
         </React.Fragment>
     )
