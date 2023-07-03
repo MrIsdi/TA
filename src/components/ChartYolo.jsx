@@ -74,7 +74,7 @@ function ChartYolo({manual, sistem}) {
     return (
         <React.Fragment>
             <div className='w-full lg:w-1/2 mt-8 flex justify-center gap-x-8'>
-                <Bar options={options} data={dataYolo} className="w-full bg-white/10 backdrop-blur-[10px] rounded-2xl border border-white shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
+                <Bar options={options} data={dataYolo} className="w-full bg-white/10 backdrop-blur-[10px] rounded-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]" />
             </div>
         </React.Fragment>
     )

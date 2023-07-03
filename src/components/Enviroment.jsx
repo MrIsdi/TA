@@ -24,7 +24,7 @@ function Enviroment() {
     }
     return (
         <React.Fragment>
-            <div className='container lg:min-h-screen m-auto mt-16'>
+            <div className='container lg:min-h-screen m-auto mt-16' id='data'>
                 <p className="text-xl text-white text-center font-bold">Pemantauan dan Pengontrolan Bibit Tomat Berdasarkan Lingkungan</p>
                 <select onChange={handleOption} className="text-[#217EFD] bg-[#BDD9FE] rounded m-auto flex">
                     <option defaultValue></option>

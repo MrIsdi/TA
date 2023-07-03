@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "../assets/logo.png"
 
 function MobileView({style}){
@@ -21,21 +21,35 @@ function MobileView({style}){
 
 function Navbar() {
     const [burger, setBurger] = useState(false)
+    const [scroll, setScroll] = useState("")
     const handleBurger = () =>{
         burger === false ? setBurger(true) : setBurger(false)
     }
+    const handleScroll = () => {
+        if(document.body.scrollTop > 46 || document.documentElement.scrollTop > 46){
+            setScroll("bg-white/10 backdrop-blur-[10px] border-b border-white/10 shadow-[0_8px_32px_0_rgba(31, 38, 135, .37)]")
+        }else{
+            setScroll("")
+        }
+    };
+    useEffect(()=>{
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    },[scroll])
     return (
         <React.Fragment>
-            <nav className='flex lg:justify-evenly justify-between mt-4 md:mx-4'>
+            <nav className={`flex lg:justify-evenly justify-between pt-4 mx-4 lg:mx-0 fixed w-full top-0 z-50 ${scroll}`}>
                 <div className='flex items-center'>
                     <img src={logo} alt="" />
                     <p className='text-2xl text-tomato font-bold'>CV<span className='text-base text-white'>Tomato.</span></p>
                 </div>
                 <div className="lg:flex gap-x-32 flex-col lg:flex-row hidden">
                     <div className='flex gap-x-8 flex-col lg:flex-row'>
-                        <a href="" className='text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] px-8 py-2 '>Home</a>
-                        <a href="" className='text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] px-8 py-2 '>About</a>
-                        <a href="" className='text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] px-8 py-2 '>Statistics</a>
+                        <a href="#home" className='text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] px-8 py-2 '>Home</a>
+                        <a href="#about" className='text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] px-8 py-2 '>About</a>
+                        <a href="#data" className='text-white font-bold hover:rounded-full hover:backdrop-blur-sm hover:bg-white/20 hover:shadow-[4px_3px_6px_,_-2px_-3px_6px] px-8 py-2 '>Statistics</a>
                     </div>
                     <div className='flex items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 text-white">
