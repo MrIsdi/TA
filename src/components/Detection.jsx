@@ -8,7 +8,7 @@ import ChartYolo from './ChartYolo'
 function Detection() {
     const [data, setData] = useState([])
     const getData = async () =>{
-        const { data } = await axios.get("http://localhost:8000/yolov1")
+        const { data } = await axios.get("https://cvtomato.000webhostapp.com/yolov1")
         setData(data)
     }
     useEffect(()=>{

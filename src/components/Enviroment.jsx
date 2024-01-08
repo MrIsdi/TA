@@ -7,7 +7,7 @@ function Enviroment() {
     const [data, setData] = useState([])
     const [page, setPage] = useState([])
     useEffect(()=>{
-        axios.get("http://localhost:8000/sensor")
+        axios.get("https://cvtomato.000webhostapp.com/sensor")
             .then((response)=>{
                 setData(response.data)
             })
